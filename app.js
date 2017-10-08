@@ -25,13 +25,17 @@ function onReady() {
       const checkbox = document.createElement('input');
       checkbox.type = "checkbox";
       const remove = document.createElement('input');
-      remove.type = "reset";
+      remove.type = "button";
 
       newLi.textContent = toDo.title;
 
       toDoList.appendChild(newLi);
       newLi.appendChild(checkbox);
       newLi.appendChild(remove);
+
+      remove.addEventListener("click", function(deleteToDo) {
+        toDoList.removeChild(newLi);
+      });
     });
 
 

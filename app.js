@@ -15,6 +15,9 @@ function onReady() {
     renderTheUI(toDos);
   }
 
+
+
+
   function renderTheUI(toDos) {
     const toDoList = document.getElementById('toDoList');
 
@@ -24,30 +27,39 @@ function onReady() {
       const newLi = document.createElement('li');
       const checkbox = document.createElement('input');
       checkbox.type = "checkbox";
-      const remove = document.createElement('input');
-      remove.type = "button";
+
 
       newLi.textContent = toDo.title;
 
       toDoList.appendChild(newLi);
       newLi.appendChild(checkbox);
-      newLi.appendChild(remove);
 
-      remove.addEventListener("click", function(deleteToDo) {
+      function removeChecked() {
         toDoList.removeChild(newLi);
-      });
+      }
+
+      //this is a total guess.
+      checkbox.addEventListener()"change", event=> {
+            event.preventDefault();
+            removeChecked();
+        });
+
+
     });
 
-
   }
+
+
+
+
   addToDoForm.addEventListener('submit', event => {
     event.preventDefault();
     createNewToDo();
   });
 
+
   renderTheUI(toDos);
 }
-
 
 window.onload = function() {
   onReady();

@@ -40,6 +40,7 @@ function onReady() {
 
       if(checkbox.checked === true){
       checkbox.parentElement.remove()
+      toDos.splice(0, 1)
         }
 
       });

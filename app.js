@@ -34,22 +34,19 @@ function onReady() {
       toDoList.appendChild(newLi);
       newLi.appendChild(checkbox);
 
-      function removeChecked() {
-        toDoList.removeChild(newLi);
-      }
-
-      //this is a total guess.
-      checkbox.addEventListener()"change", event=> {
+      var button = document.querySelectorAll(".removeCheck")[0];
+      removeCheck.addEventListener("click", event => {
             event.preventDefault();
-            removeChecked();
-        });
 
+      if(checkbox.checked === true){
+      checkbox.parentElement.remove()
+        }
+
+      });
 
     });
 
   }
-
-
 
 
   addToDoForm.addEventListener('submit', event => {
